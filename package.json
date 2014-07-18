@@ -1,7 +1,7 @@
 {
-  "name": "hello-world",
+  "name": "my-express-app",
   "main": "server.js",
-  "description": "hello world test app",
+  "description": "test app",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
