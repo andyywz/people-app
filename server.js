@@ -15,6 +15,10 @@ var personSchema = {
 
 var Person = mongoose.model('Person', personSchema, 'people');
 
+app.get('/', function (req, res) {
+  res.send('hello world');
+});
+
 app.get('/people', function (req, res) {
   Person.find(function (err, doc) {
     res.send(doc);
