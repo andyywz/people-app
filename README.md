@@ -1,10 +1,8 @@
 ## People App
-==============================
 This is a simple CRUD app using the MEAN stack. Stores people models with first name, last
 name and email attributes.
 
 ### Setup
-====================
 Firstly, make sure you have [NodeJS](http://nodejs.org/download/) and 
 [MongoDB](http://www.mongodb.org/downloads) installed.
 
