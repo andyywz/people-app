@@ -1,0 +1,23 @@
+{
+  "name": "my-express-app",
+  "version": "0.0.1",
+  "authors": [
+    "Andy Yong <ayong@mdsol.com>"
+  ],
+  "description": "test app",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.11.0",
+    "angular": "~1.2.20",
+    "bootstrap": "~3.2.0"
+  }
+}
