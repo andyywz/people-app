@@ -6,12 +6,68 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-  <div id="main" ng-app="people" ng-controller="AppCtrl as app">
-    <ul>
-      <li>
+  <div id="main" ng-app="atp" ng-controller="AppCtrl as app">
+    <div id="list" class="col-md-2">
+      <ul class="list-unstyled">
+        <li ng-repeat="person in app.people">
+          <a href="#" ng-click="app.selectPerson(person)">{{person.firstName}}</a>
+        </li>
+      </ul>
+    </div>
+    <div id="content" class="col-md-6">
       
-      </li>
-    </ul>
+      <button class="btn btn-default" ng-show="!showForm" ng-click="showForm = !showForm">New Person</button>
+      
+      <form ng-show="showForm" name="personForm">
+        <div class="form-group">
+          <label>First Name</label>
+          <input class="form-control" type="text" ng-model="form.person.firstName">
+        </div>
+        
+        <div class="form-group">
+          <label>Last Name</label>
+          <input class="form-control" type="text" ng-model="form.person.lastName">
+        </div>
+        
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="email" ng-model="form.person.email">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" ng-click="app.addPerson(form.person)">
+          <i class="glyphicon glyphicon-plus"></i>
+          Create
+        </button>
+        <button type="button" class="btn btn-default" ng-click="showForm = !showForm">Cancel</button>
+      </form>
+      
+      <div ng-show="app.selectedPerson">
+        <h2>{{app.selectedPerson.firstName}} {{app.selectedPerson.lastName}}</h2>
+        <a href="mailto:{{app.selectedPerson.email}}">{{app.selectedPerson.email}}</a>
+        <button class="btn btn-default" ng-show="!showEditForm" ng-click="showEditForm = !showEditForm">Edit</button>
+        <button class="btn btn-danger" ng-click="app.deletePerson(app.selectedPerson)">Delete</button>
+        
+        <form ng-show="showEditForm">
+          <div class="form-group">
+            <label>First Name</label>
+            <input class="form-control" type="text" ng-model="app.selectedPerson.firstName">
+          </div>
+        
+          <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" type="text" ng-model="app.selectedPerson.lastName">
+          </div>
+        
+          <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="email" ng-model="app.selectedPerson.email">
+          </div>
+          
+          <button class="btn btn-primary" ng-click="app.updatePerson(app.selectedPerson)">Update</button>
+          <button type="button" class="btn btn-default" ng-click="showEditForm = !showEditForm">Cancel</button>
+        </form>
+      </div>
+    </div>
   </div>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
