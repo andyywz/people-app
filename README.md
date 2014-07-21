@@ -10,7 +10,7 @@ If you do not have bower on your machine run this command on the terminal.
 ```npm install -g bower```
 
 Setup your database by modifying line 11 in server.js
-```mongoose.connect('mongodb://localhost/[db-name]')```
+```mongoose.connect(\'mongodb://localhost/[db-name]\')```
 
 Finally, start the server by running ```nodemon``` and open index.html to see the app.
 
