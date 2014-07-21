@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.4.3",
     "cors": "^2.4.1",
     "express": "3.x",
     "mongoose": "^3.8.13",
